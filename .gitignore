@@ -1,0 +1,9 @@
+addons/
+.godot/
+*.zip
+.editorconfig
+.git
+*.cfg
+dwarf*
+Vladimir-Putin*
+trump*

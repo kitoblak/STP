@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvxmx3uefxra7"]
+
+[ext_resource type="Script" uid="uid://dfauo3l7111vf" path="res://scene/nedrug/nedrug.gd" id="1_8rcki"]
+[ext_resource type="Texture2D" uid="uid://d3llgxmfb4er5" path="res://scene/nedrug/trump.png" id="1_n0vni"]
+[ext_resource type="Texture2D" uid="uid://dft6o283os44d" path="res://scene/player/Потрепаный комбез.png" id="3_iju4m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8rcki"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n0vni")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iju4m")
+}],
+"loop": true,
+"name": &"kostya",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iju4m"]
+radius = 38.0
+height = 208.0
+
+[node name="nedrug" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_8rcki")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_8rcki")
+animation = &"kostya"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_iju4m")

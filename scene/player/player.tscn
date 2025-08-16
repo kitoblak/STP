@@ -1,0 +1,111 @@
+[gd_scene load_steps=17 format=3 uid="uid://dwldad4qht5p1"]
+
+[ext_resource type="Script" uid="uid://c6b10ik1gca22" path="res://scene/player/player.gd" id="1_oypl4"]
+[ext_resource type="Texture2D" uid="uid://8mpipi706dyl" path="res://scene/player/dwarf_m_idle_anim_f0.png" id="1_pisg7"]
+[ext_resource type="PackedScene" uid="uid://b353voxc8ybdm" path="res://scene/bullet/bullet.tscn" id="2_1wtbu"]
+[ext_resource type="Texture2D" uid="uid://ccdn601i84i8d" path="res://scene/player/dwarf_m_idle_anim_f1.png" id="2_oypl4"]
+[ext_resource type="Texture2D" uid="uid://cgt6df52va4u7" path="res://scene/player/dwarf_m_idle_anim_f2.png" id="3_qjg4s"]
+[ext_resource type="Texture2D" uid="uid://cvb07caosjc4h" path="res://scene/player/dwarf_m_idle_anim_f3.png" id="4_1wtbu"]
+[ext_resource type="Texture2D" uid="uid://rgbtvle7br47" path="res://scene/player/dwarf_m_hit_anim_f0.png" id="5_p3aiu"]
+[ext_resource type="Texture2D" uid="uid://ib5ocvdoaq2s" path="res://scene/player/dwarf_m_run_anim_f0.png" id="6_f5r2w"]
+[ext_resource type="Texture2D" uid="uid://et4bcvxbtgfh" path="res://scene/player/dwarf_m_run_anim_f1.png" id="7_oen5c"]
+[ext_resource type="Texture2D" uid="uid://n5ye24b41j4b" path="res://scene/player/dwarf_m_run_anim_f2.png" id="8_5g408"]
+[ext_resource type="Texture2D" uid="uid://dft6o283os44d" path="res://scene/player/Потрепаный комбез.png" id="8_p3aiu"]
+[ext_resource type="Texture2D" uid="uid://dhssx0diki2w7" path="res://scene/player/Потрепаный комбез_testing.png" id="9_f5r2w"]
+[ext_resource type="Texture2D" uid="uid://d2mmmu2ajw5i0" path="res://scene/player/dwarf_m_run_anim_f3.png" id="9_sc4n2"]
+[ext_resource type="Texture2D" uid="uid://bbmxn7n6nqf67" path="res://scene/player/Vladimir-Putin-PNG-Photo.png" id="11_qjg4s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lrcci"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pisg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oypl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_qjg4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1wtbu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_p3aiu")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_p3aiu")
+}],
+"loop": true,
+"name": &"kostya",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_f5r2w")
+}],
+"loop": true,
+"name": &"kostya_test",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_f5r2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oen5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5g408")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sc4n2")
+}],
+"loop": true,
+"name": &"run",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_qjg4s")
+}],
+"loop": true,
+"name": &"wtf",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qjg4s"]
+radius = 38.0
+height = 209.221
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 0
+script = ExtResource("1_oypl4")
+run_stamina_usage = 10.0
+bullet = ExtResource("2_1wtbu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_lrcci")
+animation = &"kostya"
+autoplay = "kostya"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.994162)
+shape = SubResource("CapsuleShape2D_qjg4s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="EndOfGun" type="Marker2D" parent="."]
+position = Vector2(87, 0)

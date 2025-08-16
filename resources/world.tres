@@ -1,0 +1,21 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dwrjug2uxe43k"]
+
+[ext_resource type="Texture2D" uid="uid://dtv6l8rbrurrg" path="res://assets/Асфальт.png" id="1_c4cx8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u562s"]
+texture = ExtResource("1_c4cx8")
+texture_region_size = Vector2i(256, 256)
+1:4/0 = 0
+1:4/0/probability = 30.0
+2:4/0 = 0
+3:4/0 = 0
+2:5/0 = 0
+0:0/0 = 0
+0:0/0/terrain_set = 0
+
+[resource]
+tile_size = Vector2i(256, 256)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "pyl"
+terrain_set_0/terrain_0/color = Color(0.975469, 0.185086, 0.993144, 1)
+sources/1 = SubResource("TileSetAtlasSource_u562s")
