@@ -36,7 +36,7 @@ func _process(delta):
 	
 	krutit(delta)
 	
-	if (could_run):
+	if (could_run and target_velocity != Vector2(0, 0)):
 		Global.update_stamina.emit(-run_stamina_usage * delta)
 	else:
 		Global.update_stamina.emit(stamina_regen * delta)
