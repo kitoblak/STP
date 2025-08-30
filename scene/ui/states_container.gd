@@ -9,6 +9,7 @@ const MAX_STATES_PER_ROW = 3
 const STATE_SIZE = Vector2(256, 256)
 const HORIZONTAL_SPACING = 10
 const VERTICAL_SPACING = 10
+const ZOOM = 0.5
 
 # Структура для хранения информации о состоянии
 class StateInfo:
@@ -40,7 +41,8 @@ class StateInfo:
 # Массив текущих активных состояний
 var active_states: Array[StateInfo] = []
 
-@onready var Bars = get_tree().get_nodes_in_group("Bars")
+@onready var StaminaBar = get_parent().get_node("Bars/Stamina")
+@onready var HealthBar = get_parent().get_node("Bars/Health")
 
 # Сигналы для добавления состояний
 #signal state_added(state_type: int)
@@ -126,7 +128,7 @@ func _calculate_state_position(index: int) -> Vector2:
 	
 	# Вычисляем координаты
 	var x = get_viewport().get_visible_rect().size.x * 2 * 0.96 - (col + 1) * (STATE_SIZE.x + HORIZONTAL_SPACING)
-	var y = - row * (STATE_SIZE.y + VERTICAL_SPACING) + get_viewport().get_visible_rect().size.y * 0.8 * 2 - STATE_SIZE.y
+	var y = HealthBar.position.y * 2 * 0.85 - row * (STATE_SIZE.y + VERTICAL_SPACING) - STATE_SIZE.y
 	
 	return Vector2(x, y)
 
