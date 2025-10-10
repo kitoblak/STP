@@ -127,8 +127,8 @@ func _calculate_state_position(index: int) -> Vector2:
 	#col = MAX_STATES_PER_ROW - 1 - col
 	
 	# Вычисляем координаты
-	var x = get_viewport().get_visible_rect().size.x * 2 * 0.96 - (col + 1) * (STATE_SIZE.x + HORIZONTAL_SPACING)
-	var y = HealthBar.position.y * 2 * 0.85 - row * (STATE_SIZE.y + VERTICAL_SPACING) - STATE_SIZE.y
+	var x = get_viewport().get_visible_rect().size.x * (1/scale.x) * 0.96 - (col + 1) * (STATE_SIZE.x + HORIZONTAL_SPACING)
+	var y = HealthBar.position.y * (1/scale.y) * 0.9 - row * (STATE_SIZE.y + VERTICAL_SPACING) - STATE_SIZE.y
 	
 	return Vector2(x, y)
 
