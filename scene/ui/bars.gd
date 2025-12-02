@@ -18,11 +18,17 @@ func _ready():
 	StaminaBar.max_value = max_stamina
 	StaminaBar.value = max_stamina
 	
-	HealthBar.position.x = get_viewport().get_visible_rect().size.x * 0.97 - HealthBar.size.x
-	HealthBar.position.y = get_viewport().get_visible_rect().size.y * 0.97 - HealthBar.size.y - HealthBar.size.y
+	HealthBar.scale.x = get_parent().ZOOM * 3
+	HealthBar.scale.y = get_parent().ZOOM * 3
 	
-	StaminaBar.position.x = get_viewport().get_visible_rect().size.x * 0.97 - StaminaBar.size.x
-	StaminaBar.position.y = get_viewport().get_visible_rect().size.y * 0.97 - StaminaBar.size.y
+	StaminaBar.scale.x = get_parent().ZOOM * 3
+	StaminaBar.scale.y = get_parent().ZOOM * 3
+	
+	HealthBar.position.x = get_viewport().get_visible_rect().size.x * 0.97 - HealthBar.size.x * HealthBar.scale.x
+	HealthBar.position.y = get_viewport().get_visible_rect().size.y * 0.97 - HealthBar.size.y * HealthBar.scale.y - HealthBar.size.y * HealthBar.scale.y
+	
+	StaminaBar.position.x = get_viewport().get_visible_rect().size.x * 0.97 - StaminaBar.size.x * StaminaBar.scale.y
+	StaminaBar.position.y = get_viewport().get_visible_rect().size.y * 0.97 - StaminaBar.size.y * StaminaBar.scale.y
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
