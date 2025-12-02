@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxw0vr5m48dc0"]
+[gd_scene load_steps=11 format=3 uid="uid://bxw0vr5m48dc0"]
 
+[ext_resource type="Script" uid="uid://mqik0ijmlcnd" path="res://scene/ui/ui.gd" id="1_l2jg2"]
 [ext_resource type="Script" uid="uid://bjafkw7btiswd" path="res://scene/ui/states_container.gd" id="1_t81m0"]
 [ext_resource type="Texture2D" uid="uid://dci6soiwwt27m" path="res://assets/Значок слабая боль.png" id="2_wiplj"]
 [ext_resource type="Texture2D" uid="uid://bb5kgbb0lcksq" path="res://assets/Значок средняя боль.png" id="3_p21fl"]
@@ -11,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://t07wihwarbup" path="res://assets/Шкала выносливости 2.png" id="9_nl6we"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_l2jg2")
 
 [node name="Bars" type="Control" parent="." groups=["ui"]]
 layout_mode = 3

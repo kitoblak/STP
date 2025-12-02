@@ -9,7 +9,6 @@ const MAX_STATES_PER_ROW = 3
 const STATE_SIZE = Vector2(256, 256)
 const HORIZONTAL_SPACING = 10
 const VERTICAL_SPACING = 10
-const ZOOM = 0.5
 
 # Структура для хранения информации о состоянии
 class StateInfo:
@@ -51,6 +50,9 @@ var active_states: Array[StateInfo] = []
 func _ready():
 	Global.state_add.connect(add_state)
 	Global.state_remove.connect(remove_state)
+	
+	scale.x = get_parent().ZOOM
+	scale.y = get_parent().ZOOM
 
 # Добавление нового состояния
 func add_state(state_type: int) -> void:
