@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhe0ivw8yv3dp"]
+[gd_scene load_steps=3 format=3 uid="uid://dhe0ivw8yv3dp"]
 
 [ext_resource type="Script" uid="uid://bt58w7isd5mo8" path="res://scene/Cell/cell.gd" id="1_daepx"]
+[ext_resource type="Texture2D" uid="uid://gjunb85r8hun" path="res://assets/Шаблон для ячейки.png" id="2_gxph5"]
 
 [node name="Cell" type="Control"]
 layout_mode = 3
@@ -10,3 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_daepx")
+
+[node name="CellTexture (debug)" type="Sprite2D" parent="."]
+texture = ExtResource("2_gxph5")

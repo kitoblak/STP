@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c755sktxm117p" path="res://assets/Фон шкалы выносливости.png" id="8_ytfbm"]
 [ext_resource type="Texture2D" uid="uid://t07wihwarbup" path="res://assets/Шкала выносливости 2.png" id="9_nl6we"]
 [ext_resource type="Script" uid="uid://qi60je7j54ya" path="res://scene/ui/inventory.gd" id="11_ytfbm"]
-[ext_resource type="Texture2D" uid="uid://c523by6leqq8r" path="res://assets/Инвентарь в1.png" id="12_nl6we"]
+[ext_resource type="Texture2D" uid="uid://dh5x8texg8x45" path="res://assets/Инвентарь в4.png" id="12_nl6we"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_l2jg2")
