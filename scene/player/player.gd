@@ -66,6 +66,8 @@ func _unhandled_input(event):
 		Global.state_add.emit(1)
 	if (event.is_action_pressed("ability_3")):
 		Global.state_add.emit(2)
+	if event.is_action_pressed("Inventory"):
+		Global.InventoryToggle.emit()
 	#if (event.is_action_released("lmb")):
 		#stop_shoot()
 

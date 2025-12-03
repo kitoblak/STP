@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxw0vr5m48dc0"]
+[gd_scene load_steps=13 format=3 uid="uid://bxw0vr5m48dc0"]
 
 [ext_resource type="Script" uid="uid://mqik0ijmlcnd" path="res://scene/ui/ui.gd" id="1_l2jg2"]
 [ext_resource type="Script" uid="uid://bjafkw7btiswd" path="res://scene/ui/states_container.gd" id="1_t81m0"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://b1assqdhxb8cv" path="res://assets/Шкала здоровья.png" id="7_l2jg2"]
 [ext_resource type="Texture2D" uid="uid://c755sktxm117p" path="res://assets/Фон шкалы выносливости.png" id="8_ytfbm"]
 [ext_resource type="Texture2D" uid="uid://t07wihwarbup" path="res://assets/Шкала выносливости 2.png" id="9_nl6we"]
+[ext_resource type="Script" uid="uid://qi60je7j54ya" path="res://scene/ui/inventory.gd" id="11_ytfbm"]
+[ext_resource type="Texture2D" uid="uid://c523by6leqq8r" path="res://assets/Инвентарь в1.png" id="12_nl6we"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_l2jg2")
@@ -21,7 +23,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("5_f7jfn")
 
-[node name="Health" type="TextureProgressBar" parent="Bars"]
+[node name="Health" type="TextureProgressBar" parent="Bars" groups=["ui"]]
 layout_mode = 0
 offset_right = 512.0
 offset_bottom = 60.0
@@ -29,7 +31,7 @@ value = 100.0
 texture_under = ExtResource("6_igbm8")
 texture_progress = ExtResource("7_l2jg2")
 
-[node name="Stamina" type="TextureProgressBar" parent="Bars"]
+[node name="Stamina" type="TextureProgressBar" parent="Bars" groups=["ui"]]
 light_mask = 31
 visibility_layer = 31
 layout_mode = 0
@@ -51,3 +53,18 @@ scale = Vector2(0.35, 0.35)
 script = ExtResource("1_t81m0")
 state_textures = Array[Texture2D]([ExtResource("2_wiplj"), ExtResource("3_p21fl"), ExtResource("4_4e0l7")])
 durations = Array[float]([1.0, 2.0, 3.0])
+
+[node name="Inventory" type="Control" parent="." groups=["ui"]]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_ytfbm")
+
+[node name="InventorySprite" type="Sprite2D" parent="Inventory"]
+texture = ExtResource("12_nl6we")
+
+[node name="CellContainer" type="Control" parent="Inventory"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
