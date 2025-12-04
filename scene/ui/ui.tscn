@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bxw0vr5m48dc0"]
+[gd_scene load_steps=15 format=3 uid="uid://bxw0vr5m48dc0"]
 
 [ext_resource type="Script" uid="uid://mqik0ijmlcnd" path="res://scene/ui/ui.gd" id="1_l2jg2"]
 [ext_resource type="Script" uid="uid://bjafkw7btiswd" path="res://scene/ui/states_container.gd" id="1_t81m0"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dgemsjb0u3a7s" path="res://assets/Значок сильная боль.png" id="4_4e0l7"]
 [ext_resource type="Script" uid="uid://yffylx4da78j" path="res://scene/ui/bars.gd" id="5_f7jfn"]
 [ext_resource type="Texture2D" uid="uid://b463chico80d2" path="res://assets/Фон шкалы здоровья.png" id="6_igbm8"]
-[ext_resource type="Texture2D" uid="uid://b1assqdhxb8cv" path="res://assets/Шкала здоровья.png" id="7_l2jg2"]
+[ext_resource type="Texture2D" uid="uid://b8mp3ncxalu40" path="res://assets/Фон шкалы радиации 2.png" id="7_cto6g"]
+[ext_resource type="Texture2D" uid="uid://c0f5gqxeb50km" path="res://assets/Шкала здоровья.png" id="7_l2jg2"]
+[ext_resource type="Texture2D" uid="uid://qgd0mjiqgluk" path="res://assets/Шкала радиации 2.png" id="8_5wssb"]
 [ext_resource type="Texture2D" uid="uid://c755sktxm117p" path="res://assets/Фон шкалы выносливости.png" id="8_ytfbm"]
 [ext_resource type="Texture2D" uid="uid://t07wihwarbup" path="res://assets/Шкала выносливости 2.png" id="9_nl6we"]
 [ext_resource type="Script" uid="uid://qi60je7j54ya" path="res://scene/ui/inventory.gd" id="11_ytfbm"]
@@ -30,6 +32,7 @@ offset_bottom = 60.0
 value = 100.0
 texture_under = ExtResource("6_igbm8")
 texture_progress = ExtResource("7_l2jg2")
+texture_progress_offset = Vector2(17, 17)
 
 [node name="Stamina" type="TextureProgressBar" parent="Bars" groups=["ui"]]
 light_mask = 31
@@ -39,9 +42,17 @@ offset_right = 512.0
 offset_bottom = 60.0
 step = 0.001
 value = 100.0
-fill_mode = 1
 texture_under = ExtResource("8_ytfbm")
 texture_progress = ExtResource("9_nl6we")
+texture_progress_offset = Vector2(17, 17)
+
+[node name="Radiation" type="TextureProgressBar" parent="Bars" groups=["ui"]]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 60.0
+step = 0.001
+texture_under = ExtResource("7_cto6g")
+texture_progress = ExtResource("8_5wssb")
 texture_progress_offset = Vector2(17, 17)
 
 [node name="StatesContainer" type="Control" parent="." groups=["ui"]]

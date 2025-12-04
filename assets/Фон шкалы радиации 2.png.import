@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0f5gqxeb50km"
-path="res://.godot/imported/Шкала здоровья.png-d3425c8a401ac8c6bf5c63841b6c8022.ctex"
+uid="uid://b8mp3ncxalu40"
+path="res://.godot/imported/Фон шкалы радиации 2.png-3ecca86127361f0b3590d05335e8e580.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Шкала здоровья.png"
-dest_files=["res://.godot/imported/Шкала здоровья.png-d3425c8a401ac8c6bf5c63841b6c8022.ctex"]
+source_file="res://assets/Фон шкалы радиации 2.png"
+dest_files=["res://.godot/imported/Фон шкалы радиации 2.png-3ecca86127361f0b3590d05335e8e580.ctex"]
 
 [params]
 

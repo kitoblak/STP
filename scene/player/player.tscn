@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwldad4qht5p1"]
+[gd_scene load_steps=8 format=3 uid="uid://dwldad4qht5p1"]
 
 [ext_resource type="Script" uid="uid://c6b10ik1gca22" path="res://scene/player/player.gd" id="1_oypl4"]
 [ext_resource type="PackedScene" uid="uid://b353voxc8ybdm" path="res://scene/bullet/bullet.tscn" id="2_1wtbu"]
+[ext_resource type="Texture2D" uid="uid://4b3kluo2533m" path="res://assets/Охотничий комбинезон.png" id="5_ajqqa"]
 [ext_resource type="Texture2D" uid="uid://dft6o283os44d" path="res://scene/player/Потрепаный комбез.png" id="8_p3aiu"]
 [ext_resource type="Texture2D" uid="uid://dhssx0diki2w7" path="res://scene/player/Потрепаный комбез_testing.png" id="9_f5r2w"]
 
@@ -22,11 +23,19 @@ animations = [{
 "loop": true,
 "name": &"kostya_test",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ajqqa")
+}],
+"loop": true,
+"name": &"ohota_combez",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qjg4s"]
-radius = 38.0
-height = 209.221
+radius = 125.0
+height = 263.53854
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 0
@@ -37,8 +46,8 @@ bullet = ExtResource("2_1wtbu")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_lrcci")
-animation = &"kostya"
-autoplay = "kostya"
+animation = &"ohota_combez"
+autoplay = "ohota_combez"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.994162)
